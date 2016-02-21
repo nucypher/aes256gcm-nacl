@@ -199,12 +199,11 @@ sys.path.insert(0, here("src"))
 
 setup(
     name="aes256gcm-nacl",
-    version="0.1.0",
+    version="0.1.3",
     description="aes256gcm support based on pynacl",
     author="XueYu",
     author_email="278006819@qq.com",
     license="AGPLv3",
-    url="http://zerodb.io",
     setup_requires=setup_requirements,
     install_requires=requirements,
     extras_require={
