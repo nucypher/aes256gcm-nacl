@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from __future__ import absolute_import, division, print_function
-from setuptools import setup, find_packages
-import sys, os
+from setuptools import setup
 import errno
 import functools
 import glob
@@ -11,13 +10,10 @@ import platform
 import subprocess
 import sys
 
-from distutils.command.build import build
 from distutils.command.build_clib import build_clib as _build_clib
 from distutils.command.build_ext import build_ext as _build_ext
 
-from setuptools import Distribution, setup
-
-from setuptools.command.install import install
+from setuptools import Distribution
 
 
 SODIUM_MAJOR = 7
@@ -188,6 +184,7 @@ class build_ext(_build_ext):
             )
 
         return _build_ext.run(self)
+
 
 def here(*paths):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), *paths))
