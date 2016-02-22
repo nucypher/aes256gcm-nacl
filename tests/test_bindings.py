@@ -18,7 +18,7 @@ from binascii import hexlify
 
 import pytest
 
-from zerodbext import bindings as c
+from zerodbext.aead import bindings as c
 from nacl.exceptions import CryptoError
 
 
