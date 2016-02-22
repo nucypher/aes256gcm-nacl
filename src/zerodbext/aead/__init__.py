@@ -1,14 +1,13 @@
-
 from __future__ import absolute_import, division, print_function
 
 from nacl import encoding
-import zerodbext.bindings
 from nacl.utils import StringFixer
+from . import bindings
 
 
 class AES256GCM(encoding.Encodable, StringFixer, object):
-    KEY_SIZE = zerodbext.bindings.crypto_aead_aes256gcm_KEYBYTES
-    NONCE_SIZE = zerodbext.bindings.crypto_aead_aes256gcm_NPUBBYTES
+    KEY_SIZE = bindings.crypto_aead_aes256gcm_KEYBYTES
+    NONCE_SIZE = bindings.crypto_aead_aes256gcm_NPUBBYTES
 
     def __init__(self, key, encoder=encoding.RawEncoder):
         key = encoder.decode(key)
@@ -29,7 +28,7 @@ class AES256GCM(encoding.Encodable, StringFixer, object):
 
     @staticmethod
     def aes256gcm_is_available():
-        return zerodbext.bindings.crypto_aead_aes256gcm_is_available()
+        return bindings.crypto_aead_aes256gcm_is_available()
 
     def encrypt_and_mac(
             self, message, nonce, additional_data=None,
@@ -39,7 +38,7 @@ class AES256GCM(encoding.Encodable, StringFixer, object):
                 "The nonce must be exactly %s bytes long" % self.NONCE_SIZE,
             )
 
-        ciphertext = zerodbext.bindings.crypto_aead_aes256gcm_encrypt(
+        ciphertext = bindings.crypto_aead_aes256gcm_encrypt(
             message, nonce, self._key,
             additional_data, additional_data_len)
 
@@ -62,7 +61,7 @@ class AES256GCM(encoding.Encodable, StringFixer, object):
                 "The nonce must be exactly %s bytes long" % self.NONCE_SIZE,
             )
 
-        plaintext = zerodbext.bindings.crypto_aead_aes256gcm_decrypt(
+        plaintext = bindings.crypto_aead_aes256gcm_decrypt(
             cipher, tag, nonce, self._key,
             additional_data, additional_data_len)
 

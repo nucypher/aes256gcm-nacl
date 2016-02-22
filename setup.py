@@ -193,7 +193,7 @@ sys.path.insert(0, here("src"))
 
 setup(
     name="aes256gcm-nacl",
-    version="0.1.4",
+    version="0.1.5",
     description="aes256gcm support based on pynacl",
     author="XueYu",
     author_email="278006819@qq.com",
@@ -207,7 +207,7 @@ setup(
     package_dir={"": "src"},
     packages=[
         "zerodbext",
-        "zerodbext.bindings"
+        "zerodbext.aead"
     ],
     namespace_packages=["zerodbext"],
     ext_package="zerodbext",
