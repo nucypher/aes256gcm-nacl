@@ -46,9 +46,6 @@ sodium = functools.partial(here, "src/libsodium/src/libsodium")
 sys.path.insert(0, here("src"))
 
 
-import zerodbext # flake8: noqa
-
-
 def which(name, flags=os.X_OK):  # Taken from twisted
     result = []
     exts = filter(None, os.environ.get('PATHEXT', '').split(os.pathsep))
@@ -199,7 +196,7 @@ sys.path.insert(0, here("src"))
 
 setup(
     name="aes256gcm-nacl",
-    version="0.1.3",
+    version="0.1.4",
     description="aes256gcm support based on pynacl",
     author="XueYu",
     author_email="278006819@qq.com",
@@ -215,6 +212,7 @@ setup(
         "zerodbext",
         "zerodbext.bindings"
     ],
+    namespace_packages=["zerodbext"],
     ext_package="zerodbext",
     cffi_modules=[
         "src/bindings/build.py:ffi",
