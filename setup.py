@@ -207,7 +207,8 @@ setup(
     package_dir={"": "src"},
     packages=[
         "zerodbext",
-        "zerodbext.aead"
+        "zerodbext.aead",
+        "zerodbext.aead.bindings"
     ],
     namespace_packages=["zerodbext"],
     ext_package="zerodbext",
