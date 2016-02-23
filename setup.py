@@ -19,7 +19,7 @@ from setuptools import Distribution
 SODIUM_MAJOR = 7
 SODIUM_MINOR = 3
 
-requirements = ["pynacl", "six"]
+requirements = ["six"]
 setup_requirements = []
 
 if platform.python_implementation() == "PyPy":

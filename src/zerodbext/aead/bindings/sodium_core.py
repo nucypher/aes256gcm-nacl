@@ -14,7 +14,7 @@
 from __future__ import absolute_import, division, print_function
 
 from zerodbext._aes256gcm_sodium import lib
-from nacl.exceptions import CryptoError
+from zerodbext.aead.exceptions import CryptoError
 
 
 def sodium_init():

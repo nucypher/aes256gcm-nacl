@@ -19,7 +19,7 @@ from binascii import hexlify
 import pytest
 
 from zerodbext.aead import bindings as c
-from nacl.exceptions import CryptoError
+from zerodbext.aead.exceptions import CryptoError
 
 
 def tohex(b):

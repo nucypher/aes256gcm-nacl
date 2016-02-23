@@ -2,7 +2,7 @@
 from __future__ import absolute_import, division, print_function
 
 from zerodbext._aes256gcm_sodium import ffi, lib
-from nacl.exceptions import CryptoError
+from zerodbext.aead.exceptions import CryptoError
 
 crypto_aead_aes256gcm_KEYBYTES = lib.crypto_aead_aes256gcm_keybytes()
 crypto_aead_aes256gcm_NPUBBYTES = lib.crypto_aead_aes256gcm_npubbytes()
