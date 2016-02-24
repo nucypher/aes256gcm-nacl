@@ -193,7 +193,7 @@ sys.path.insert(0, here("src"))
 
 setup(
     name="aes256gcm-nacl",
-    version="0.1.5",
+    version="0.1.6",
     description="aes256gcm support based on pynacl",
     author="XueYu",
     author_email="278006819@qq.com",
