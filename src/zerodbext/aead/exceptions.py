@@ -11,16 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 from __future__ import absolute_import, division, print_function
 
-from zerodbext._aes256gcm_sodium import lib
-from zerodbext.aead.exceptions import CryptoError
+
+class CryptoError(Exception):
+    """
+    Base exception for all nacl related errors
+    """
 
 
-def sodium_init():
+class BadSignatureError(CryptoError):
     """
-    Initializes sodium, picking the best implementations available for this
-    machine.
+    Raised when the signature was forged or otherwise corrupt.
     """
-    if lib.sodium_init() != 0:
-        raise CryptoError("Could not initialize sodium")

@@ -5,7 +5,7 @@ import binascii
 import pytest
 
 from zerodbext.aead import AES256GCM
-from nacl.encoding import HexEncoder
+from zerodbext.aead.encoding import HexEncoder
 
 VECTORS = [
     # Key, Nonce, Plaintext, Ciphertext, Tag

@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function
 
-from nacl import encoding
-from nacl.utils import StringFixer
+from . import encoding
+from .utils import StringFixer
 from . import bindings
 
 
